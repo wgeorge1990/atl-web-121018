@@ -2,22 +2,29 @@
 
 ## Objectives
 
-* Distinguish between data types in Ruby
-* Show how to look up documentation for data types in Ruby
-* Demonstrate the use of common Array methods
+* Ruby Data Types
+* Array methods
   * `#each`
+  * returns the original array
   * `#map`
   * `#select`
   * `#find`
-* Differentiate array methods by their respective return values
-* Employ test-driven development best practices in their labs
+  * returns first element that 'makes the block true' or nil
+
+
+* TDD
   * `rspec --fail-fast` handle one error at a time
   * Red, Green, Refactor
   * Make it work (shameless green), make it right, make it fast
-* Practice Intentional Debugging
-  * Recognize when to use `puts` and when to use `binding.pry`
 
-## Schedule
+
+* Intentional Debugging
+  * Error messages and test failures
+  * Recognize when to use `puts` and when to use `binding.pry`
+  * Google 'Docs'
+
+
+## Outline
 
 -  Working with the spec and intro to TDD
 -  Intentional Debugging
@@ -25,7 +32,21 @@
 -  code tracing (scope and types)
 -  reading error messages
 -  googling effectively
+
+
 -  Git flow (see a merge conflict)
+
+
+## Questions
+-X Atom and local machine development vs. learn IDE
+- "It works but it just looks weird" - aesthetics
+   - "idiomatic"
+- When to use `puts` and when to use `binding.pry`?
+- return values, `puts` vs `return`?
+- `end.something`????? Wat.
+- Why arrays or hashes?
+  - arrays are easier to iterate over
+  - hashes are good for data with some structure
 
 **Bonus Questions:**
 

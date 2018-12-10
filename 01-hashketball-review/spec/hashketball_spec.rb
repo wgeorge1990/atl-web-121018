@@ -1,5 +1,18 @@
 require 'spec_helper'
 
+
+# Why these tests?
+# - prove or disprove that the code does what is intended, quickly
+# - sets expectations for code, comparing what it should do to what it actually does
+# - defining behavior
+# - see if the code is correct
+# - speed up development
+# - think about different scenarios
+# - gives us a goal
+# - gives you something to look at when you are stuck
+# - prevent bugs
+# - speed up the feedback loop
+
 describe 'hashketball' do
 
   describe '#game_hash' do
