@@ -12,7 +12,6 @@
 
 ### Timeline
 
-Let's represent some students using arrays? What data should we track?
 
 
 
@@ -52,6 +51,7 @@ student = { name: "brit", age: 32, subject: "ruby",
 ```
 
 * can create a student
+* can greet a friend
 * can read a student's name, age, subject
 * students can be assigned a lab
 * students can complete a lab
