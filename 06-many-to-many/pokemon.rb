@@ -14,8 +14,10 @@
 # * trainer
 
 class Pokemon
-  attr_reader :name, :type, :trainer, :level
-  attr_writer :trainer
+  attr_reader :name, :type, :level
+  attr_accessor :trainer
+
+  @@all_pokemon = []
 
   def initialize(name, type, level)
     @name = name
@@ -23,13 +25,11 @@ class Pokemon
     @level = level
     @hp = level * 10
     @trainer = nil
+    @@all_pokemon << self
   end
 
-  def trainer=(new_trainer)
-    @trainer = new_trainer
+  def self.all
+    @@all_pokemon
   end
 
-  def trainer
-    @trainer
-  end
 end

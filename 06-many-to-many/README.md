@@ -2,13 +2,20 @@
 
 Welcome back.
 
+
+
 ## Objectives
 
 * Learn the difference between class methods and instance methods
 * Learn how and when to use class variables
 * Practice with attr_accessor
-* Know how to model a many-to-many relationship
 * Know how to maintain a "single source of truth"
+* Know how to model a many-to-many relationship
+
+
+
+
+
 
 ## Recap
 
