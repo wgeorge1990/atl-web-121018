@@ -3,8 +3,8 @@
 ## Objectives
 
 * Be able to define CRUD
-* Recognize Normalized vs Denormalized data
 * Be able to define Foreign Key
+* Recognize Normalized vs Denormalized data
 * Recognize Client Commands vs Table Operations vs Data Operations
 
 
@@ -85,19 +85,30 @@ UPDATE fans SET name="Dwayne Kunze" WHERE fanId=1;
 7. Write the SQL to return fans that are not fans of the black eyed peas.
 
 ```sql
-
+SELECT * FROM fans WHERE NOT(artistId=169);
 ```
 
 8. Write the SQL to display an artists name next to their album title
 
 ```sql
+SELECT albums.title, artists.name FROM albums
+  JOIN artists ON albums.artistId=artists.artistId;
+```
 
+OR
+
+```sql
+SELECT albums.title, artists.name FROM artists
+  JOIN albums ON artists.artistId=albums.artistId;
 ```
 
 9. Write the SQL to display artist name, album name and number of tracks on that album
 
 ```sql
-
+sqlite> SELECT artists.name, albums.title, COUNT(*) FROM albums
+   ...>   JOIN artists ON albums.artistId=artists.artistId
+   ...>   JOIN tracks ON tracks.albumId=albums.albumId
+   ...>   GROUP BY tracks.albumId;
 ```
 
 10. Write the SQL to return the name of all of the artists in the 'Pop' Genre
