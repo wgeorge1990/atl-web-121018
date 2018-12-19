@@ -1,5 +1,6 @@
 class Tweet
-  attr_accessor :id, :message, :username
+  attr_reader :id
+  attr_accessor :message, :username
 
   def self.all
     hashes = DB[:conn].execute("SELECT * FROM tweets")
