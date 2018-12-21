@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_19_182646) do
+ActiveRecord::Schema.define(version: 2018_12_21_194004) do
+
+  create_table "pokemon", force: :cascade do |t|
+    t.string "name"
+    t.integer "level"
+    t.string "kind"
+    t.integer "trainer_id"
+    t.integer "hp", default: 30
+  end
 
   create_table "trainers", force: :cascade do |t|
     t.string "name"
