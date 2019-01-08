@@ -13,6 +13,7 @@ REMINDER: verb + path == route
 
 
 
+
 #### Finishing the homepage
 
 * We got the data in the controller, let's use it appropriately in our view.
@@ -54,4 +55,3 @@ Also, somewhat surprisingly, a form is always split up between two routes:
   * The other route receives the information in the form and processes it
 
 We will get much more practice with this. Forms are hard but _so_ important.
-

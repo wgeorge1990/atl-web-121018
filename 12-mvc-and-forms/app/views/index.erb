@@ -1,10 +1,11 @@
 <h1>Welcome to the Library!</h1>
 
 #{2 + 2} - ERB is not a ruby string but when you run it, produces one
+But this works: <%= 2 + 2 %>
 
-<h3>List of Titles - <%= @books.count %></h3>
+<h3>List of Books - <%= @books.count %></h3>
 <ul>
-  <li><%= 2 + 2 %></li>
-  <li>It!</li>
-  <li>Pet Cemetery</li>
+  <% @books.each do |book| %>
+    <li><%= book.title %></li>
+  <% end %>
 </ul>
