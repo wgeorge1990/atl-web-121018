@@ -1,0 +1,15 @@
+<h1>Welcome to the Library!</h1>
+
+#{2 + 2} - ERB is not a ruby string but when you run it, produces one
+But this works: <%= 2 + 2 %>
+
+<br />
+<br />
+<a href="/books/new">Donate a new Book!</a>
+
+<h3>List of Books - <%= @books.count %></h3>
+<ul>
+  <% @books.each do |book| %>
+    <li><a href="/books/<%= book.id %>"><%= book.title %></a></li>
+  <% end %>
+</ul>
