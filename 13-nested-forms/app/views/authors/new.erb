@@ -1,0 +1,18 @@
+<h1>Donate some books by a new author!</h1>
+
+<!-- action is the path to send data to, method is the verb -->
+<form action="/authors" method="POST">
+  <input id="name" type="text" name="name" placeholder="Author Name" />
+  <br />
+  <h4>Which books are ya gonna give us?</h4>
+  <% 3.times do %>
+    <input type="text" name="books[][title]" placeholder="Book Title" />
+    <br />
+    <input type="text" name="books[][snippet]" placeholder="Book Snippet" />
+    <br />
+  <% end %>
+  <br />
+  <input type="submit" value="Donate Books" />
+</form>
+
+<a href="/authors">List of authors</a>
