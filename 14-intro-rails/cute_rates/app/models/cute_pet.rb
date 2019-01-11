@@ -1,0 +1,2 @@
+class CutePet < ApplicationRecord
+end
