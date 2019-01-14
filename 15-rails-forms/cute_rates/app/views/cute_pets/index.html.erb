@@ -1,0 +1,9 @@
+<h1>Look at these cute pets!</h1>
+
+<ul>
+  <% @pets.each do |pet| %>
+  <li><a href="/cute_pets/<%= pet.id %>"><%= pet.name %></a></li>
+  <% end %>
+</ul>
+
+<a href="/cute_pets/new">Add a new Pet</a>
