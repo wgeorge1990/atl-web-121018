@@ -11,13 +11,17 @@ class PetsController < ApplicationController
 
   def new
     @pet = Pet.new
+    @people = Person.all
     render :new
   end
 
   def create
-    @pet = Pet.create(pet_params)
-    redirect_to pet_path(@pet.id)
-    # redirect_to "/cute_pets/#{@pet.id}"
+    @pet = Pet.new(pet_params)
+    if @pet.save
+      redirect_to pet_path(@pet.id)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -33,6 +37,6 @@ class PetsController < ApplicationController
 
   private
   def pet_params
-    params.permit(:name, :image, :likes)
+    params.require(:pet).permit(:name, :image, :likes, :person_id)
   end
 end

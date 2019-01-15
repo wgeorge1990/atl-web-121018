@@ -5,5 +5,7 @@
   <%= f.text_field :image %>
   <%= f.label "Likes" %>
   <%= f.number_field :likes %>
+  <%= f.label "Owner" %>
+  <%= f.collection_select(:person_id, @people, :id, :name) %>
   <%= f.submit %>
 <% end %>

@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   get '/', to: 'example#testing'
 
   resources :pets, except: [:destroy]
-  resources :people, only: [:show, :index, :new]
+  resources :people, only: [:show, :index, :new, :create]
 end
