@@ -20,6 +20,7 @@ class PetsController < ApplicationController
     if @pet.save
       redirect_to pet_path(@pet.id)
     else
+      @people = Person.all
       render :new
     end
   end
