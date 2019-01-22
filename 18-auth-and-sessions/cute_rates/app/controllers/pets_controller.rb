@@ -1,4 +1,6 @@
 class PetsController < ApplicationController
+  before_action :authorize!, only: [:new, :create, :edit, :update]
+
   def index
     @pets = Pet.all
     render :index
@@ -27,7 +29,13 @@ class PetsController < ApplicationController
 
   def edit
     @pet = Pet.find(params[:id])
-    render :edit
+    if @pet.person_id == current_user.id
+      @people = Person.all
+      render :edit
+    else
+      flash[:notice] = "You can only edit your own pets."
+      redirect_to pets_path
+    end
   end
 
   def update
