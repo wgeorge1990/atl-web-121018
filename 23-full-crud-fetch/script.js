@@ -24,6 +24,7 @@ function renderAllPokemon() {
 }
 
 function renderPokemon(pokemon) {
+  console.log("render pokemon", pokemon)
   let container = document.querySelector("#pokemon-container")
   let element = pokemonView(pokemon)
   container.appendChild(element)
