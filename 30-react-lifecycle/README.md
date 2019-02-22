@@ -3,6 +3,53 @@
 
 [React Lifecycle Methods Diagram](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
 
+## Agenda
+
+- Tweet
+- Koala fetch
+- Widget Picker
+- Clocks and Stocks
+
+## Tweet
+
+When we see
+
+```
+eat(
+  makeBurger()
+)
+```
+
+we know `makeBurger()` runs before `eat()`.
+
+Assuming Form and Button are React components and are rendered like this:
+
+```
+<Form>
+  <Button />
+</Form>
+```
+
+whose render method will run first?
+
+## Koala
+
+> If you run json-server db.json you will get an API of koala photos running on localhost:3000. Demonstrate a fetch request to http://localhost:3000/koalas from App and select a koala at random to pass as a koala prop to the RandomKoala component. Use that prop to render a koala image in the component.
+
+## Widget Picker
+
+> create a widget that switches between showing a clock and a stock ticker on click. WidgetSelector should be a child of app which has siblings of DigitalClock and StockTicker.
+
+## Clocks
+
+> This component will hold a time state which we will initialize in the constructor. Then we will setInterval to update this state once a second in componentDidMount.
+
+## and Stocks
+
+> Create a function which will randomly generate a two-digit stock price. Like our clock, setInterval so the stock price changes every second. You want the price to show green if it has gone up, and red if it has gone down. This means you will need access to the previous state and current state in order to compare the prices.
+
+## Lifecycle methods
+
 ### What should I know
 - *constructor(props)*
 - *render()*
