@@ -1,9 +1,8 @@
 import React from 'react';
 
 const DogDetail = (props) => {
-  console.log(props)
   return (
-    <div className={`ui card ${props.width} wide column`}>
+    <div className={`ui card ten wide column`}>
       <div className="image">
         <img src={props.dog.image_url} />
       </div>

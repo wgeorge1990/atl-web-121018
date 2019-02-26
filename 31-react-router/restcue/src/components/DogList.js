@@ -1,5 +1,6 @@
 import React from 'react';
 import DogListItem from './DogListItem';
+import { Link } from 'react-router-dom';
 
 const DogList = (props) => {
   console.log("dog list", props)
@@ -8,14 +9,14 @@ const DogList = (props) => {
     <div className={`${props.width} wide column`}>
       <div className="ui huge divided animated list">
         {props.dogs.map(x => <DogListItem dog={x} selectDog={props.selectDog} />)}
-        <div className="item" onClick={props.toggleForm}>
+        <Link to="/dogs/new" className="item">
           <div className="content">
             <a class="header">
               <i class="plus circle icon teal"></i>
               New Dog
             </a>
           </div>
-        </div>
+        </Link>
       </div>
     </div>
   )
