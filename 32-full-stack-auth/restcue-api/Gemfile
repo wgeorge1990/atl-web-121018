@@ -9,6 +9,11 @@ gem 'rails', '~> 5.2.1', '>= 5.2.1.1'
 gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
+# Add JWT for encrypting access tokens
+gem "jwt", "~> 2.1"
+# Add dotenv-rails for keeping secrets out of git
+gem 'dotenv-rails', groups: [:development, :test]
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
