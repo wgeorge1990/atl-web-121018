@@ -18,9 +18,18 @@ const Navbar = (props) => {
           <div className="sub header">{props.description}</div>
         </h2>
       </Link>
-      <Link to="/about" className="item" style={{ color: 'black' }} >
+      <Link to="/about" className="item" style={{ color: 'black' }}>
         <div className="content">About Us</div>
       </Link>
+      { localStorage.getItem('token') ?
+        <Link to="/" className="item" style={{ color: 'black' }}
+          onClick={ () => localStorage.clear() }>
+          <div className="content">Logout</div>
+        </Link> :
+        <Link to="/login" className="item" style={{ color: 'black' }}>
+          <div className="content">Login</div>
+        </Link>
+      }
     </div>
   )
 }
