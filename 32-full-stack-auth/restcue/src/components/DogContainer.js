@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { getDogs } from '../services/Backend';
 
+import CheckLogin from '../components/CheckLogin';
 import DogList from './DogList'
 import DogDetail from './DogDetail'
 import DogForm from './DogForm'
@@ -20,10 +21,6 @@ class DogContainer extends React.Component {
     let newDogList = this.state.dogs.concat(dog)
     this.setState({ dogs: newDogList })
   }
-  // <DogForm addDog={this.addDog} />
-  // let currentDog = this.state.dogs.find(x => x.id === currentDogId)
-  // <DogDetail dog={currentDog} />
-
 
   render = () => {
     return (
@@ -34,7 +31,8 @@ class DogContainer extends React.Component {
         />
         <Switch>
           <Route path="/dogs/new" component={() => {
-            return <DogForm addDog={this.addDog} />
+            let form = <DogForm addDog={this.addDog} />
+            return <CheckLogin component={form} />
           }} />
           <Route path="/dogs/:id" component={(props) => {
             let dogId = parseInt(props.match.params.id)
