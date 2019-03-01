@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { createDog } from '../services/Backend';
+
 class DogForm extends React.Component {
   state = {
     image_url: "",
@@ -12,14 +14,7 @@ class DogForm extends React.Component {
 
   saveDog = (event) => {
     event.preventDefault()
-    fetch("http://localhost:3000/dogs", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(this.state)
-    }).then(res => res.json())
-    .then(json => {
+    createDog(this.state).then(json => {
       if (json.errors) {
         console.log("oops, didn't work")
       } else {

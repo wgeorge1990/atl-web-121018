@@ -1,9 +1,10 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import { getDogs } from '../services/Backend';
+
 import DogList from './DogList'
 import DogDetail from './DogDetail'
 import DogForm from './DogForm'
-
-import { Switch, Route } from 'react-router-dom';
 
 class DogContainer extends React.Component {
 
@@ -12,9 +13,7 @@ class DogContainer extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/dogs")
-      .then(res => res.json())
-      .then(json => this.setState({ dogs: json }))
+    getDogs().then(json => this.setState({ dogs: json }))
   }
 
   addDog = (dog) => {
