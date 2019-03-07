@@ -70,7 +70,7 @@ const continuouslyImprove = (test, improve, startingGuess=1.0) => {
 const sqrtClose   = (x, guess) => Math.abs(x - guess ** 2) < 0.001
 const sqrtImprove = (x, guess) => (guess + x / guess) / 2
 
-const curtClose = (x, guess) => Math.abs(x - guess ** 3) < 0.001
+const curtClose   = (x, guess) => Math.abs(x - guess ** 3) < 0.001
 const curtImprove = (x, guess) => (guess + x / guess ** 2) / 2
 
 let findSqrt = continuouslyImprove(sqrtClose, sqrtImprove, 1.0)
