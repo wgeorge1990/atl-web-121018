@@ -51,6 +51,8 @@ about React and what Redux tries to do to fix those issues.
 
 [nth-roots]: https://gist.github.com/kingcons/8071c6a214bc82d09be398250d9b3953
 
+
+
 #### Functional Principles
 
 * Programming should be amenable to mathematical reasoning.
@@ -67,11 +69,20 @@ about React and what Redux tries to do to fix those issues.
 
 
 
+
+
+
 ### Part 2: Redux All The Things! 🎉
 
 First things first, what are some things you've found hard about React?
 
-* ???
+* Setting state on a parent from a child component
+* First render where the state isn't there yet
+* State is needed everywhere, passing props like crazy
+* Refactoring is very hard, changing components means moving state all over
+  * Thought state could go in children, but it seems to move up until
+    everything in App
+
 
 Okay, so Redux is designed with _Functional Principles_ in mind.
 So it breaks things up in a way that may seem counterintuitive.
