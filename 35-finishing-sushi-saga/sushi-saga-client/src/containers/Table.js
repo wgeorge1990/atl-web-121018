@@ -16,27 +16,15 @@ const Table = (props) => {
       </h1>
       <div className="table">
         <div className="stack">
-          {
-            /*
-               renderPlates takes an array
-               and renders an empty plate
-               for every element in the array
-            */
-            renderPlates([])
-          }
+          { renderPlates(props.eaten) }
         </div>
       </div>
     </Fragment>
   )
 }
 
-let mapStateToProps = (state) => {
-  return { budget: state.budget }
+let mapStateToProps = ({ eaten }) => {
+  return { budget: eaten.budget, eaten: eaten.list }
 }
-
-// const propAdder = connect(mapStateToProps)
-//
-// console.log(Table)
-// console.log(propAdder(Table))
 
 export default connect(mapStateToProps)(Table);

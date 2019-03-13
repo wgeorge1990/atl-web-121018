@@ -15,10 +15,12 @@ class SushiContainer extends React.Component {
     }
 
     render() {
+      let { offset, sushi } = this.props
+      let shownSushi = sushi.slice(offset, offset + 4)
       return (
         <Fragment>
           <div className="belt">
-            { this.props.sushi.map(x => <Sushi key={x.id} id={x.id} />) }
+            { shownSushi.map(x => <Sushi key={x.id} id={x.id} />) }
             <MoreButton />
           </div>
         </Fragment>
@@ -27,7 +29,7 @@ class SushiContainer extends React.Component {
 }
 
 const mapStateToProps = ({ sushi }) => {
-  return { sushi }
+  return { sushi: sushi.menu, offset: sushi.offset }
 }
 
 export default connect(mapStateToProps)(SushiContainer)

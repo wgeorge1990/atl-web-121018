@@ -4,14 +4,13 @@ import { connect } from 'react-redux'
 const Sushi = (props) => {
   return (
     <div className="sushi">
-      <div className="plate"
-           onClick={/* Give me a callback! */ null}>
+      <div className="plate">
         {
-          /* Tell me if this sushi has been eaten! */
-          false ?
+          props.eaten.includes(props.id) ?
             null
           :
-            <img src={props.img_url} width="100%" />
+            <img src={props.img_url} width="100%"
+             onClick={() => props.eatSushi(props.id, props.price)} />
         }
       </div>
       <h4 className="sushi-details">
@@ -23,8 +22,14 @@ const Sushi = (props) => {
 
 const mapStateToProps = (state, ownProps) => {
   console.log("ownProps are:", ownProps)
-  let sushi = state.sushi.find(x => x.id === ownProps.id)
-  return { ...sushi }
+  let sushi = state.sushi.menu.find(x => x.id === ownProps.id)
+  return { ...sushi, eaten: state.eaten.list }
 }
 
-export default connect(mapStateToProps)(Sushi)
+const mapDispatchToProps = (dispatch) => {
+  return {
+    eatSushi: (id, price) => dispatch({ type: 'EAT_SUSHI', id, price })
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Sushi)

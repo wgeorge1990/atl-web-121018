@@ -1,21 +1,11 @@
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
+import sushiReducer from './reducers/sushiReducer'
+import eatenReducer from './reducers/eatenReducer'
 
-const initialState = {
-  sushi: [],
-  budget: 100,
-  eaten: []
-}
-
-const rootReducer = (oldState = initialState, action) => {
-  switch (action.type) {
-    case 'FETCHED_SUSHI': {
-      return { ...oldState, sushi: action.sushi }
-    }
-    default: {
-      return oldState
-    }
-  }
-}
+const rootReducer = combineReducers({
+  sushi: sushiReducer,
+  eaten: eatenReducer
+})
 
 export default createStore(rootReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
